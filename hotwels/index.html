@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se adapte a celular, tablet y PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Special Edition</title>
+
+    <!-- Conecta el archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PANTALLA 1: CAJA CERRADA
+    ====================================================== -->
+
+    <section id="inicio" class="pantalla activa">
+
+        <div class="estrellas"></div>
+
+        <div class="encabezado">
+            <p class="mini-titulo">COLLECTOR SERIES</p>
+            <h1>SPECIAL EDITION</h1>
+            <p class="subtitulo">A model made just for you</p>
+        </div>
+
+        <!-- Caja -->
+        <div class="caja" id="caja">
+
+            <!-- Parte superior -->
+            <div class="tapa">
+
+                <div class="etiqueta">
+                    <span>LIMITED</span>
+                    <strong>01</strong>
+                    <span>01</span>
+                </div>
+
+                <p>COLLECTOR EDITION</p>
+
+            </div>
+
+            <!-- Parte interior -->
+            <div class="interior-caja">
+
+                <!-- Carrito -->
+                <div class="carrito" id="carritoInicio">
+
+                    <div class="carroceria">
+
+                        <div class="techo"></div>
+
+                        <div class="ventana ventana-1"></div>
+                        <div class="ventana ventana-2"></div>
+
+                        <div class="capot"></div>
+
+                        <div class="faro faro-1"></div>
+                        <div class="faro faro-2"></div>
+
+                        <div class="numero">01</div>
+
+                    </div>
+
+                    <div class="rueda rueda-1"></div>
+                    <div class="rueda rueda-2"></div>
+
+                </div>
+
+            </div>
+
+            <!-- Nombre -->
+            <div class="nombre-caja" id="nombreCaja">
+                TU AMIGO
+            </div>
+
+        </div>
+
+        <button class="boton" id="botonAbrir">
+            ABRIR CAJA
+        </button>
+
+        <p class="instruccion">
+            Una edición especial está esperando...
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA 2: CAJA ABIERTA
+    ====================================================== -->
+
+    <section id="sorpresa" class="pantalla">
+
+        <div class="brillo"></div>
+
+        <div class="contenido-sorpresa">
+
+            <p class="mini-titulo">UNBOXING COMPLETED</p>
+
+            <h2>¡TU MODELO HA LLEGADO!</h2>
+
+            <div class="carrito-grande">
+
+                <div class="carrito" id="carritoSalida">
+
+                    <div class="carroceria">
+
+                        <div class="techo"></div>
+
+                        <div class="ventana ventana-1"></div>
+                        <div class="ventana ventana-2"></div>
+
+                        <div class="capot"></div>
+
+                        <div class="faro faro-1"></div>
+                        <div class="faro faro-2"></div>
+
+                        <div class="numero">01</div>
+
+                    </div>
+
+                    <div class="rueda rueda-1"></div>
+                    <div class="rueda rueda-2"></div>
+
+                </div>
+
+            </div>
+
+            <p class="mensaje-sorpresa">
+                Pero todavía falta algo...
+            </p>
+
+            <button class="boton" id="botonPersonalizar">
+                PERSONALIZAR MODELO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA 3: PERSONALIZACIÓN
+    ====================================================== -->
+
+    <section id="personalizacion" class="pantalla">
+
+        <div class="personalizacion-contenido">
+
+            <p class="mini-titulo">CUSTOM GARAGE</p>
+
+            <h2>PERSONALIZA TU MODELO</h2>
+
+            <p class="descripcion">
+                Crea una edición que sea completamente única.
+            </p>
+
+
+            <!-- Vista previa -->
+            <div class="zona-preview">
+
+                <div class="carrito-preview" id="carritoPreview">
+
+                    <div class="carrito">
+
+                        <div class="carroceria">
+
+                            <div class="techo"></div>
+
+                            <div class="ventana ventana-1"></div>
+                            <div class="ventana ventana-2"></div>
+
+                            <div class="capot"></div>
+
+                            <div class="faro faro-1"></div>
+                            <div class="faro faro-2"></div>
+
+                            <div class="numero" id="numeroPreview">
+                                01
+                            </div>
+
+                        </div>
+
+                        <div class="rueda rueda-1"></div>
+                        <div class="rueda rueda-2"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selección de color -->
+            <div class="opcion">
+
+                <h3>COLOR</h3>
+
+                <div class="colores">
+
+                    <button
+                        class="color azul-electrico seleccionado"
+                        data-color="azul-electrico">
+                    </button>
+
+                    <button
+                        class="color azul-cielo"
+                        data-color="azul-cielo">
+                    </button>
+
+                    <button
+                        class="color azul-oscuro"
+                        data-color="azul-oscuro">
+                    </button>
+
+                    <button
+                        class="color negro"
+                        data-color="negro">
+                    </button>
+
+                    <button
+                        class="color blanco"
+                        data-color="blanco">
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selección de número -->
+            <div class="opcion">
+
+                <h3>NÚMERO</h3>
+
+                <div class="numeros">
+
+                    <button class="numero-btn seleccionado" data-numero="01">
+                        01
+                    </button>
+
+                    <button class="numero-btn" data-numero="07">
+                        07
+                    </button>
+
+                    <button class="numero-btn" data-numero="24">
+                        24
+                    </button>
+
+                    <button class="numero-btn" data-numero="99">
+                        99
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selección de estilo -->
+            <div class="opcion">
+
+                <h3>ESTILO</h3>
+
+                <div class="estilos">
+
+                    <button class="estilo seleccionado" data-estilo="racing">
+                        🏁 RACING
+                    </button>
+
+                    <button class="estilo" data-estilo="turbo">
+                        ⚡ TURBO
+                    </button>
+
+                    <button class="estilo" data-estilo="street">
+                        🌃 STREET
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button class="boton boton-crear" id="botonCrear">
+                CREAR MI MODELO
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA 4: MODELO CREADO
+    ====================================================== -->
+
+    <section id="modelo" class="pantalla">
+
+        <div class="modelo-contenido">
+
+            <p class="mini-titulo">PRODUCTION COMPLETE</p>
+
+            <h2>MODELO COMPLETADO</h2>
+
+            <div class="ficha">
+
+                <div class="ficha-cabecera">
+                    <span>SPECIAL EDITION</span>
+                    <strong>01 / 01</strong>
+                </div>
+
+
+                <div class="ficha-carrito">
+
+                    <div class="carrito" id="carritoFinal">
+
+                        <div class="carroceria">
+
+                            <div class="techo"></div>
+
+                            <div class="ventana ventana-1"></div>
+                            <div class="ventana ventana-2"></div>
+
+                            <div class="capot"></div>
+
+                            <div class="faro faro-1"></div>
+                            <div class="faro faro-2"></div>
+
+                            <div class="numero" id="numeroFinal">
+                                01
+                            </div>
+
+                        </div>
+
+                        <div class="rueda rueda-1"></div>
+                        <div class="rueda rueda-2"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="datos-modelo">
+
+                    <div>
+                        <span>MODELO</span>
+                        <strong id="modeloNombre">
+                            TU AMIGO
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>COLOR</span>
+                        <strong id="modeloColor">
+                            AZUL ELÉCTRICO
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>ESTILO</span>
+                        <strong id="modeloEstilo">
+                            RACING
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>NÚMERO</span>
+                        <strong id="modeloNumero">
+                            01
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="modelo-unico">
+                    ★ 1 OF 1 ★
+                </div>
+
+            </div>
+
+
+            <button class="boton" id="botonMensaje">
+                VER MI MENSAJE
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA 5: MENSAJE FINAL
+    ====================================================== -->
+
+    <section id="final" class="pantalla">
+
+        <div class="final-contenido">
+
+            <div class="corona">
+                ★
+            </div>
+
+            <p class="mini-titulo">
+                SPECIAL EDITION
+            </p>
+
+            <h2 id="nombreFinal">
+                TU AMIGO
+            </h2>
+
+            <div class="linea"></div>
+
+            <p class="mensaje-final">
+                Hay personas que hacen que los días normales
+                se vuelvan momentos que vale la pena recordar.
+            </p>
+
+            <p class="mensaje-final">
+                Por eso esta edición no podía ser una más.
+            </p>
+
+            <p class="mensaje-final destacado">
+                Este modelo es único porque es para ti. 💙
+            </p>
+
+            <div class="sello">
+                <span>LIMITED</span>
+                <strong>01</strong>
+                <span>OF 01</span>
+            </div>
+
+            <button class="boton boton-reiniciar" id="botonReiniciar">
+                VOLVER A VER
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Conecta JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

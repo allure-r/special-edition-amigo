@@ -1,0 +1,1249 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --azul-noche: #030712;
+    --azul-profundo: #06152e;
+    --azul: #087cff;
+    --azul-electrico: #00aaff;
+    --azul-cielo: #55d9ff;
+    --blanco: #ffffff;
+    --gris: #8da2bd;
+
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #082b57 0%,
+            var(--azul-noche) 65%
+        );
+
+    color: var(--blanco);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =====================================================
+   PANTALLAS
+===================================================== */
+
+.pantalla {
+
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding: 40px 20px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+.pantalla.activa {
+
+    display: flex;
+
+}
+
+
+/* =====================================================
+   TEXTOS
+===================================================== */
+
+.mini-titulo {
+
+    color: var(--azul-cielo);
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+h1 {
+
+    font-size: clamp(38px, 7vw, 80px);
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 10px var(--azul),
+        0 0 30px var(--azul-electrico);
+
+}
+
+h2 {
+
+    font-size: clamp(30px, 5vw, 55px);
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 15px rgba(0, 170, 255, 0.5);
+
+}
+
+.subtitulo {
+
+    color: var(--gris);
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =====================================================
+   PANTALLA INICIAL
+===================================================== */
+
+#inicio {
+
+    flex-direction: column;
+
+    gap: 25px;
+
+}
+
+.encabezado {
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   CAJA
+===================================================== */
+
+.caja {
+
+    position: relative;
+
+    width: min(480px, 90vw);
+
+    height: 340px;
+
+    perspective: 1000px;
+
+}
+
+
+/* Parte interior */
+
+.interior-caja {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 20px;
+
+    height: 250px;
+
+    border: 3px solid var(--azul);
+
+    background:
+        linear-gradient(
+            145deg,
+            #071c38,
+            #020914
+        );
+
+    box-shadow:
+        0 0 20px rgba(0, 136, 255, 0.5),
+        inset 0 0 40px rgba(0, 136, 255, 0.2);
+
+}
+
+
+/* Tapa */
+
+.tapa {
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 20px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0754a5,
+            #03244b
+        );
+
+    border: 3px solid var(--azul-electrico);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    transition: transform 1s ease;
+
+    transform-origin: top center;
+
+}
+
+.caja.abierta .tapa {
+
+    transform:
+        rotateX(-110deg)
+        translateY(-10px);
+
+}
+
+
+.tapa p {
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* Etiqueta */
+
+.etiqueta {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-size: 8px;
+
+    color: var(--azul-cielo);
+
+}
+
+.etiqueta strong {
+
+    font-size: 25px;
+
+    color: white;
+
+}
+
+
+/* Nombre */
+
+.nombre-caja {
+
+    position: absolute;
+
+    z-index: 6;
+
+    bottom: 35px;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 20px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   CARRITO
+===================================================== */
+
+.carrito {
+
+    position: relative;
+
+    width: 240px;
+
+    height: 120px;
+
+    transform: rotate(-2deg);
+
+}
+
+
+/* Carrocería */
+
+.carroceria {
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 65px;
+
+    bottom: 25px;
+
+    left: 10px;
+
+    border-radius:
+        35px
+        35px
+        18px
+        18px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #16c7ff,
+            #006be6 55%,
+            #032b73
+        );
+
+    box-shadow:
+
+        0 8px 20px rgba(0, 0, 0, 0.5),
+
+        0 0 20px
+        rgba(0, 170, 255, 0.6);
+
+    transition: 0.5s;
+
+}
+
+
+/* Techo */
+
+.techo {
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 48px;
+
+    left: 55px;
+
+    top: -30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a6fd6,
+            #021b3c
+        );
+
+    clip-path:
+        polygon(
+            20% 100%,
+            35% 0,
+            70% 0,
+            100% 100%
+        );
+
+}
+
+
+/* Ventanas */
+
+.ventana {
+
+    position: absolute;
+
+    top: -23px;
+
+    width: 42px;
+
+    height: 27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a9efff,
+            #062b54
+        );
+
+    border: 2px solid #42dfff;
+
+}
+
+.ventana-1 {
+
+    left: 66px;
+
+}
+
+.ventana-2 {
+
+    left: 113px;
+
+}
+
+
+/* Capot */
+
+.capot {
+
+    position: absolute;
+
+    right: -5px;
+
+    top: 5px;
+
+    width: 65px;
+
+    height: 42px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10a9ff,
+            #0052bd
+        );
+
+    border-radius: 10px;
+
+}
+
+
+/* Faros */
+
+.faro {
+
+    position: absolute;
+
+    width: 12px;
+
+    height: 8px;
+
+    background: #dffbff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px white,
+        0 0 25px var(--azul-cielo);
+
+    right: -2px;
+
+}
+
+.faro-1 {
+
+    top: 15px;
+
+}
+
+.faro-2 {
+
+    top: 31px;
+
+}
+
+
+/* Número */
+
+.numero {
+
+    position: absolute;
+
+    left: 92px;
+
+    top: 22px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: white;
+
+    text-shadow: 0 0 8px black;
+
+}
+
+
+/* Ruedas */
+
+.rueda {
+
+    position: absolute;
+
+    width: 45px;
+
+    height: 45px;
+
+    bottom: 0;
+
+    background: #02050a;
+
+    border: 7px solid #101820;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset 0 0 0 5px #39424c;
+
+}
+
+.rueda::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+
+    height: 12px;
+
+    background: #9caab8;
+
+    border-radius: 50%;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+.rueda-1 {
+
+    left: 25px;
+
+}
+
+.rueda-2 {
+
+    right: 25px;
+
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.boton {
+
+    border: none;
+
+    padding: 16px 35px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #008cff,
+            #0046b8
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(0, 153, 255, 0.5);
+
+    transition: 0.3s;
+
+}
+
+.boton:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 190, 255, 0.8);
+
+}
+
+.boton:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* =====================================================
+   INSTRUCCIÓN
+===================================================== */
+
+.instruccion {
+
+    color: var(--gris);
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   SORPRESA
+===================================================== */
+
+#sorpresa {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.contenido-sorpresa {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+.carrito-grande {
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* Animación del carrito */
+
+#carritoSalida {
+
+    animation:
+        aparecerCarrito
+        1.5s
+        ease-out;
+
+}
+
+@keyframes aparecerCarrito {
+
+    from {
+
+        transform:
+            translateY(150px)
+            scale(0.3)
+            rotate(-10deg);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(-2deg);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Brillo */
+
+.brillo {
+
+    position: absolute;
+
+    width: 400px;
+
+    height: 400px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 180, 255, 0.35),
+            transparent 70%
+        );
+
+    animation: pulso 2s infinite;
+
+}
+
+@keyframes pulso {
+
+    50% {
+
+        transform: scale(1.3);
+
+        opacity: 0.4;
+
+    }
+
+}
+
+
+/* =====================================================
+   PERSONALIZACIÓN
+===================================================== */
+
+#personalizacion {
+
+    align-items: flex-start;
+
+    overflow-y: auto;
+
+}
+
+.personalizacion-contenido {
+
+    width: min(700px, 95vw);
+
+}
+
+.descripcion {
+
+    color: var(--gris);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* Preview */
+
+.zona-preview {
+
+    height: 230px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 130, 255, 0.2),
+            transparent 65%
+        );
+
+}
+
+.carrito-preview {
+
+    transition: 0.5s;
+
+}
+
+
+/* Opciones */
+
+.opcion {
+
+    margin: 20px 0;
+
+}
+
+.opcion h3 {
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: var(--azul-cielo);
+
+    margin-bottom: 12px;
+
+}
+
+
+/* Colores */
+
+.colores {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+}
+
+.color {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+
+    cursor: pointer;
+
+}
+
+.color.seleccionado {
+
+    border-color: white;
+
+    box-shadow:
+        0 0 15px white;
+
+}
+
+.azul-electrico {
+
+    background: #008cff;
+
+}
+
+.azul-cielo {
+
+    background: #55d9ff;
+
+}
+
+.azul-oscuro {
+
+    background: #062b73;
+
+}
+
+.negro {
+
+    background: #080b10;
+
+}
+
+.blanco {
+
+    background: #eeeeee;
+
+}
+
+
+/* Números */
+
+.numeros,
+.estilos {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.numero-btn,
+.estilo {
+
+    border: 1px solid #1d4d78;
+
+    background: #07182e;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+.numero-btn.seleccionado,
+.estilo.seleccionado {
+
+    background: #087cff;
+
+    border-color: #55d9ff;
+
+}
+
+
+/* =====================================================
+   CAMBIOS DE COLOR DEL CARRITO
+===================================================== */
+
+.carrito.color-azul-cielo .carroceria {
+
+    background:
+        linear-gradient(
+            160deg,
+            #8beeff,
+            #00a8e8,
+            #0060a8
+        );
+
+}
+
+.carrito.color-azul-oscuro .carroceria {
+
+    background:
+        linear-gradient(
+            160deg,
+            #164e91,
+            #062b73,
+            #020d21
+        );
+
+}
+
+.carrito.color-negro .carroceria {
+
+    background:
+        linear-gradient(
+            160deg,
+            #59616c,
+            #111820,
+            #020408
+        );
+
+}
+
+.carrito.color-blanco .carroceria {
+
+    background:
+        linear-gradient(
+            160deg,
+            #ffffff,
+            #b7d7e8,
+            #547589
+        );
+
+}
+
+
+/* =====================================================
+   MODELO FINAL
+===================================================== */
+
+.modelo-contenido {
+
+    width: min(600px, 95vw);
+
+}
+
+.ficha {
+
+    background:
+        linear-gradient(
+            145deg,
+            #071d3b,
+            #020a16
+        );
+
+    border: 2px solid var(--azul);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 0 30px
+        rgba(0, 136, 255, 0.3);
+
+    margin: 25px 0;
+
+}
+
+.ficha-cabecera {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--azul-cielo);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+.ficha-carrito {
+
+    height: 190px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.datos-modelo {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+}
+
+.datos-modelo div {
+
+    background: rgba(0, 110, 255, 0.08);
+
+    border: 1px solid #16466d;
+
+    padding: 12px;
+
+    border-radius: 6px;
+
+}
+
+.datos-modelo span {
+
+    display: block;
+
+    font-size: 9px;
+
+    color: var(--gris);
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+
+}
+
+.datos-modelo strong {
+
+    font-size: 13px;
+
+}
+
+.modelo-unico {
+
+    margin-top: 20px;
+
+    color: var(--azul-cielo);
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   PANTALLA FINAL
+===================================================== */
+
+.final-contenido {
+
+    width: min(600px, 90vw);
+
+}
+
+.corona {
+
+    font-size: 55px;
+
+    color: var(--azul-cielo);
+
+    text-shadow:
+        0 0 20px var(--azul-electrico);
+
+    margin-bottom: 15px;
+
+}
+
+#nombreFinal {
+
+    font-size: clamp(40px, 8vw, 70px);
+
+}
+
+.linea {
+
+    width: 100px;
+
+    height: 2px;
+
+    background: var(--azul-electrico);
+
+    margin: 25px auto;
+
+    box-shadow:
+        0 0 15px var(--azul-electrico);
+
+}
+
+.mensaje-final {
+
+    color: #c5d3e2;
+
+    line-height: 1.8;
+
+    margin: 15px 0;
+
+}
+
+.mensaje-final.destacado {
+
+    color: var(--azul-cielo);
+
+    font-weight: bold;
+
+    font-size: 19px;
+
+}
+
+.sello {
+
+    width: 100px;
+
+    height: 100px;
+
+    border: 2px solid var(--azul-cielo);
+
+    border-radius: 50%;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: var(--azul-cielo);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 180, 255, 0.4);
+
+}
+
+.sello strong {
+
+    font-size: 28px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+
+        padding: 25px 15px;
+
+    }
+
+    h1 {
+
+        letter-spacing: 2px;
+
+    }
+
+    .tapa p {
+
+        font-size: 10px;
+
+    }
+
+    .caja {
+
+        transform: scale(0.9);
+
+    }
+
+    .carrito {
+
+        transform: scale(0.85) rotate(-2deg);
+
+    }
+
+    .datos-modelo {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .estilos {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .estilo {
+
+        width: 200px;
+
+    }
+
+}
